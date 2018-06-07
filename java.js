@@ -1,26 +1,26 @@
-const news_link = 'https://en.wikipedia.org/wiki'
-const randomEndpoint = '/Special:Random'
-const searchTerm = document.querySelector(".searchTerm")
+// const wiki_link = 'https://en.wikipedia.org/wiki'
+const news = 'https://newsapi.org/'
+const searchInput = document.querySelector(".searchInput")
 const search = document.querySelector(".search")
-const random = document.querySelector(".random")
 const output = document.querySelector(".output")
 
-function wikiSearch() {
-    const api_url = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm.value}&format=json&callback=?`
+function NewsSearch() {
+    // const api_url = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchInput.value}&format=json&callback=?`
+
+    const api_url = `https://newsapi.org/v2/everything?q=${searchInput.value}&from=2018-06-06&sortBy=popularity&apiKey=e923a9b3734c4ee1a3c25e0e01cae4d8`
     $.ajax({
         url: api_url,
         type: "GET",
         dataType: "json",
         success: (data) => {
             console.log(data)
-            //data[1] is the titles
-            //data[2] is the description
-            //data[3] is the link
+           
             for (let i = 0; i < data[1].length; i++) {
                 output.innerHTML += `
-                <li class="item">
-                <a  href="${data[3][i]}">${data[1][i]}</a>
-                <p>${data[2][i]}</p>
+                <li class="news">
+                <img src="${data[i][1][4]}" alt="">
+                <a  href="${data[i][0][2]}">${data[i][]}</a>
+                <p>${[i][1][1][2]}</p>
                 </li>
                 `
             }
@@ -33,9 +33,4 @@ function wikiSearch() {
 
 }
 
-search.addEventListener('click', wikiSearch)
-random.addEventListener('click', function (e){
-    window.open(`${wiki_link}${randomEndPoint}`)
-})
-
-
+search.addEventListener('click', NewsSearch)

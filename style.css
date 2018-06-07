@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(132, 45, 45);
 }
 
 header {
@@ -9,15 +10,47 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 5vh;
-    background-color: bisque;
     
 
 }
+
+img {
+    display: flex;
+    border: 50px grey;
+    justify-content: center;
+    /* align-items: center; */
+   
+
+}
 header img {
-    border: 1px solid black;
     margin-bottom: 4vh;
-    min-width: 25vw;
-    max-width: 25vw;
-    min-height: 30vh;
-    max-height: 30vh;
+    min-width: 58vw;
+    max-width: 78vw;
+    min-height: 51vh;
+    max-height: 76vh;
+}
+
+#container {
+    
+    margin-left: 100px;
+}
+
+.search {
+    border-radius: 15px;
+    padding: 20px 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    margin: 4px 2px;
+}
+
+.searchInput{
+    padding: 14px 150px;
+    margin: 10px 50px;
+    border-radius: 5px;
+    box-sizing: border-box;
+
 }
